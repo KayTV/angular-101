@@ -1,0 +1,16 @@
+<h2>{{ title }}</h2>
+
+<!-- <div>
+  <input ng-model="movieID">
+  <button ng-click="getMovie()">Get Movie</button>
+</div> -->
+
+<div>
+  <button ng-click="getMovies()">Get Movies</button>
+</div>
+
+<div ng-repeat="movie in movies">
+  <h1>{{movie.name}}</h1>
+  <h2>{{movie.genre}}</h2>
+  <h3>{{movie.description}}</h3>
+</div>
