@@ -4,13 +4,22 @@
   <input ng-model="movieID">
   <button ng-click="getMovie()">Get Movie</button>
 </div> -->
-
+<div>
+  <input ng-model="newMovie.title" placeholder="title">
+  <input ng-model="newMovie.genre" placeholder="genre">
+  <input ng-model="newMovie.plot" placeholder="plot">
+  <button ng-click="addMovie()">Add Movie</button>
+  <h4 class="alert alert-success" ng-show="successMessage"> {{ successMessage }} </h4>
+  <h4 class="alert alert-danger" ng-show="errorMessage"> {{ errorMessage }} </h4>
+</div>
 <div>
   <button ng-click="getMovies()">Get Movies</button>
 </div>
 
 <div ng-repeat="movie in movies">
-  <h1>{{movie.name}}</h1>
+  <h1>{{movie.title}}</h1>
   <h2>{{movie.genre}}</h2>
-  <h3>{{movie.description}}</h3>
+  <h3>{{movie.plot}}</h3>
+  <button ng-click="updateMovie($index)" class="btn btn-primary">Update</button>
+  <button ng-click="deleteMovie($index)" class="btn btn-danger">Delete</button>
 </div>

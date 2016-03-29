@@ -9,4 +9,23 @@ angular.module('app')
         $scope.movies = response.data;
       });
   };
+  $scope.addMovie = function() {
+    httpFactory.addMovie($scope.newMovie)
+    .then(function(response){
+      console.log('success');
+      $scope.successMessage = 'Successfully Added ' + $scope.newMovie.title;
+      $scope.newMovie = {};
+    })
+    .catch(function(err){
+      $scope.errorMessage = 'Failed to Add ' + $scope.newMovie.title;
+    })
+  }
+  $scope.updateMovie = function(index) {
+    console.log(index);
+  };
+
+  $scope.deleteMovie = function(index) {
+
+  };
+
 }]);
