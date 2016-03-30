@@ -21,7 +21,7 @@ angular.module('app')
     })
   }
   $scope.updateMovie = function(index) {
-    console.log(index);
+    // console.log(index);
   };
 
   $scope.deleteMovie = function(index) {
