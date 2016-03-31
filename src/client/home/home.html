@@ -12,14 +12,11 @@
   <h4 class="alert alert-success" ng-show="successMessage"> {{ successMessage }} </h4>
   <h4 class="alert alert-danger" ng-show="errorMessage"> {{ errorMessage }} </h4>
 </div>
-<div>
-  <button ng-click="getMovies()">Get Movies</button>
-</div>
 
-<div ng-repeat="movie in movies">
-  <h1>{{movie.title}}</h1>
-  <h2>{{movie.genre}}</h2>
-  <h3>{{movie.plot}}</h3>
+<div ng-repeat="movie in movies" class="col-xs-4">
+  <h1><input ng-model="movie.title"></h1>
+  <h2><input ng-model="movie.genre"></h2>
+  <h3><input ng-model="movie.plot"></h3>
   <button ng-click="updateMovie($index)" class="btn btn-primary">Update</button>
   <button ng-click="deleteMovie($index)" class="btn btn-danger">Delete</button>
 </div>

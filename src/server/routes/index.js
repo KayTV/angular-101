@@ -24,7 +24,21 @@ router.get('/movie/:id', function(req, res, next){
 })
 
 router.post('/movie', function(req, res, next){
-  movies().insert(req.body.movie)
+  movies().insert(req.body.movie, 'id')
+  .then(function(result){
+    res.json(result);
+  })
+})
+
+router.put('/movie/:id', function(req, res, next){
+  movies().where('id', req.params.id).update(req.body.movie)
+  .then(function(result){
+    res.json(result);
+  })
+})
+
+router.delete('/movie/:id', function(req, res, next){
+  movies().where('id', req.params.id).del()
   .then(function(result){
     res.json(result);
   })

@@ -17,5 +17,20 @@ angular.module('app')
     });
   };
 
+  factory.updateMovie = function(movie) {
+      return $http({
+        method: 'PUT',
+        url: '/movie/'+movie.id,
+        data: {movie: movie}
+      });
+    }
+
+  factory.deleteMovie = function(id) {
+      return $http({
+        method: 'DELETE',
+        url: '/movie/'+id
+      });
+    }
+
   return factory;
 }]);
